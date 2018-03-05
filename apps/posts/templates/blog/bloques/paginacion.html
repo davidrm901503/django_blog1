@@ -1,0 +1,42 @@
+{#<div class="pagination">#}
+{#    <span class="step-links">#}
+{#        {% if page.has_previous %}#}
+{#            <a href="?page=1">&laquo; primera</a>#}
+{#            <a href="?page={{ page.previous_page_number }}">anterior</a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#            Pagina {{ page.number }} of {{ page.paginator.num_pages }}#}
+{#        </span>#}
+{##}
+{#        {% if page.has_next %}#}
+{#            <a href="?page={{ page.next_page_number }}">siguiente</a>#}
+{#            <a href="?page={{ page.paginator.num_pages }}">ultima &raquo;</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#</div>#}
+
+
+<!-- Pagination -->
+<div class="pagination">
+
+
+    {% if page.has_previous %}
+        <a href="?page=1">Primero</a>
+        <a href="?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a>
+        {#        {% if (page.paginator.num_pages - 3) > 1) %}#}
+        {#            <a href="?page={{ page.previous_page_number }}">Anterior</a>#}
+        {#        {% endif %}#}
+    {% endif %}
+    {% if page.number > 1 %}
+        <a class="active">{{ page.number }} </a>
+    {% endif %}
+    {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}">{{ page.next_page_number }}</a>
+        {#        <a href="?page={{ page.paginator.num_pages }}">ultima &raquo;</a>#}
+        <a href="?page={{ page.paginator.num_pages }}">Último</a>
+    {% endif %}
+    {#    <a class="no-active">...</a>#}
+
+</div>
+<!-- End Pagination -->

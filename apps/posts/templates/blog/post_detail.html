@@ -1,0 +1,212 @@
+{% extends 'base/interior.html' %}
+{% load staticfiles %}
+{% block content %}
+    <!-- Content -->
+    <div class="col-sm-7 col-sm-offset-1">
+
+        <!-- Post -->
+        <div class="blog-item mb-80 mb-xs-40">
+            <!-- Media Gallery -->
+            <div class="blog-media mt-40 mb-40 mb-xs-30">
+                {% if post.image %}
+                    <img src="{% static 'media/' %}{{ post.image }}" alt=""/>
+                {% else %}
+                    <img src="{% static 'images/portfolio/full-project-4.jpg' %}" alt=""/>
+                {% endif %}
+            </div>
+
+            <h1 class="mt-0">{{ post.titulo }}</h1>
+
+            <!-- Text -->
+            <div class="blog-item-body">
+
+                <p>
+                    {{ post.contenido|safe }}
+                </p>
+            </div>
+            <!-- End Text -->
+
+        </div>
+        <!-- End Post -->
+
+        <!-- Comments -->
+        <div class="mb-80 mb-xs-40">
+
+            <h6 class="blog-page-title uppercase">Comments
+                ({{ post.comentarios.count }})
+            </h6>
+
+            <ul class="media-list text comment-list">
+
+                <!-- Comment Item -->
+                <li class="media comment-item">
+
+                    <a class="pull-left" href="#">
+
+                        <img class="media-object comment-avatar"
+                             src="{% static 'images/user-avatar.png ' %}" alt="" width="50"
+                             height="50"></a>
+
+                    <div class="media-body">
+
+                        <div class="comment-item-data">
+                            <div class="comment-author">
+                                <a href="#">John Doe</a>
+                            </div>
+                            Feb 9, 2014, at 10:23<span class="separator">&mdash;</span>
+                            <a href="#"><i class="fa fa-comment"></i>&nbsp;Reply</a>
+                        </div>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante
+                            eleifend eleifend.
+                        </p>
+
+                        <!-- Comment of second level -->
+                        <div class="media comment-item">
+
+                            <a class="pull-left" href="#"><img class="media-object comment-avatar"
+                                                               src="{% static 'images/user-avatar.png' %}" alt=""></a>
+
+                            <div class="media-body">
+
+                                <div class="comment-item-data">
+                                    <div class="comment-author">
+                                        <a href="#">Sam Brin</a>
+                                    </div>
+                                    Feb 9, 2014, at 10:27<span class="separator">&mdash;</span>
+                                    <a href="#"><i class="fa fa-comment"></i>&nbsp;Reply</a>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
+                                    ante eleifend eleifend.
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                        <!-- End Comment of second level -->
+
+                    </div>
+
+                </li>
+                <!-- End Comment Item -->
+
+                <!-- Comment Item -->
+                <li class="media comment-item">
+
+                    <a class="pull-left" href="#"><img class="media-object comment-avatar"
+                                                       src="{% static 'images/user-avatar.png' %}" alt=""></a>
+
+                    <div class="media-body">
+
+                        <div class="comment-item-data">
+                            <div class="comment-author">
+                                <a href="#">Emma Johnson</a>
+                            </div>
+                            Feb 9, 2014, at 10:37<span class="separator">&mdash;</span>
+                            <a href="#"><i class="fa fa-comment"></i>&nbsp;Reply</a>
+                        </div>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante
+                            eleifend eleifend.
+                        </p>
+
+                    </div>
+
+                </li>
+                <!-- End Comment Item -->
+
+                <!-- Comment Item -->
+                <li class="media comment-item">
+
+                    <a class="pull-left" href="#"><img class="media-object comment-avatar"
+                                                       src="{% static 'images/user-avatar.png' %}" alt=""></a>
+
+                    <div class="media-body">
+
+                        <div class="comment-item-data">
+                            <div class="comment-author">
+                                <a href="#">John Doe</a>
+                            </div>
+                            Feb 9, 2014, at 10:3<span class="separator">&mdash;</span>
+                            <a href="#"><i class="fa fa-comment"></i>&nbsp;Reply</a>
+                        </div>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante
+                            eleifend eleifend.
+                        </p>
+
+                    </div>
+
+                </li>
+                <!-- End Comment Item -->
+
+            </ul>
+
+        </div>
+        <!-- End Comments -->
+
+
+        <!-- Add Comment -->
+        <div class="mb-80 mb-xs-40">
+
+            <h6 class="blog-page-title uppercase">Leave a comment</h6>
+
+            <!-- Form -->
+            <form method="post" action="#" id="form" role="form" class="form">
+
+                <div class="row mb-20 mb-md-10">
+
+                    <div class="col-md-6 mb-md-10">
+                        <!-- Name -->
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name *"
+                               maxlength="100" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Email -->
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email *"
+                               maxlength="100" required>
+                    </div>
+
+                </div>
+
+                <div class="mb-20 mb-md-10">
+                    <!-- Website -->
+                    <input type="text" name="website" id="website" class="form-control" placeholder="Website"
+                           maxlength="100" required>
+                </div>
+
+                <!-- Comment -->
+                <div class="mb-30 mb-md-10">
+                        <textarea name="text" id="text" class="form-control" rows="6" placeholder="Comment"
+                                  maxlength="400"></textarea>
+                </div>
+
+                <!-- Send Button -->
+                <button type="submit" class="btn btn-mod btn-medium">
+                    Send comment
+                </button>
+
+            </form>
+            <!-- End Form -->
+
+        </div>
+        <!-- End Add Comment -->
+
+        <!-- Prev/Next Post -->
+        <div class="clearfix mt-40">
+            <a href="#" class="blog-item-more left"><i class="fa fa-angle-left"></i>&nbsp;Prev post</a>
+            <a href="#" class="blog-item-more right">Next post&nbsp;<i class="fa fa-angle-right"></i></a>
+        </div>
+        <!-- End Prev/Next Post -->
+
+
+    </div>
+    <!-- End Content -->
+{% endblock %}
