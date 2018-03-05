@@ -12,6 +12,8 @@
 *.idea/
 /.idea
 /.idea/*
+/static
+/static/*
 /log/*
 /tmp/*
 !/log/.keep

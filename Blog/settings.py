@@ -24,7 +24,7 @@ SECRET_KEY = '859#i92$35bgy@=jg!e!xt*j_=p4*%^73$*f*e!a6jwn@94xo&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['davidrm901503.pythonanywhere.com']
 
 # Application definition
 
@@ -146,10 +146,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'D:/INFORMATICA/repos/django_blog1/static'
+STATIC_ROOT = '/home/davidrm901503/django_blog1/static'
 
 MEDIA_URL = '/static/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'apps/posts/static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
